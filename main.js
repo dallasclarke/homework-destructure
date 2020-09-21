@@ -23,13 +23,20 @@ EVERY EXERCISE SHOULD USE DESTRUCTURING*/
     arctic = 'AR';
     console.log(atlantic, pacific, indian, arctic);
 
-
 //4.  Using destructuring create a new array that maps through the items array and from each item in the loop, a string of the color and shape values should be logged. for example one loop should return 'blue circle' from the items array. This is not a function. you will just map and use the items array as the only array.
     let items = [
     { color: 'blue', shape: 'circle' },
     { color: 'orange', shape: 'triangle' },
     { color: 'red', shape: 'square' },
     ];
+
+    const colorInfo = items.map(({color:a, shape:b}) => {
+        console.log(`${a} ${b}`)
+        return `${a} ${b}`
+    })
+    colorInfo;
+    
+
 //5.  Deconstruct the complete car object literal
     //Find a way to call just one variable name for each of the carTypes
     //rename the array values inside the otherShops array to third, fourth, and for the last two values they should be in an array called fifth
