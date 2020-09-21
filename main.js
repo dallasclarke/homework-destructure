@@ -16,6 +16,14 @@ EVERY EXERCISE SHOULD USE DESTRUCTURING*/
     names: ['Atlantic', 'Pacific', 'Indian', 'Arctic'],
     },
     };
+    let {ocean: {names: [atlantic, pacific, indian, arctic]}} = water;
+    atlantic = 'AT';
+    pacific = 'PA';
+    indian = 'IN';
+    arctic = 'AR';
+    console.log(atlantic, pacific, indian, arctic);
+
+
 //4.  Using destructuring create a new array that maps through the items array and from each item in the loop, a string of the color and shape values should be logged. for example one loop should return 'blue circle' from the items array. This is not a function. you will just map and use the items array as the only array.
     let items = [
     { color: 'blue', shape: 'circle' },
@@ -59,9 +67,9 @@ EVERY EXERCISE SHOULD USE DESTRUCTURING*/
       //use method chaining if you can
 
 let schoolArray = [
-  { school: ‘Pataway’, major: ‘comp sci’, year: ‘sophomore’, gpa: 3.2 },
-  { school: ‘Bronxville’, major: ‘medicine’, year: ‘junior’, gpa: 4.0 },
-  { school: ‘Scarsdale’, major: ‘accounting’, year: ‘freshman’, gpa: 2.6 },
-  { school: ‘Peekskill’, major: ‘liberal arts’, year: ‘freshman’, gpa: 4.0 },
-  { school: ‘Anopram’, major: ‘accounting’, year: ‘senior’, gpa: 3.7 },
+  { school: 'Pataway', major: 'comp sci', year: 'sophomore', gpa: 3.2 },
+  { school: 'Bronxville', major: 'medicine', year: 'junior', gpa: 4.0 },
+  { school: 'Scarsdale', major: 'accounting', year: 'freshman', gpa: 2.6 },
+  { school: 'Peekskill', major: 'liberal arts', year: 'freshman', gpa: 4.0 },
+  { school: 'Anopram', major: 'accounting', year: 'senior', gpa: 3.7 },
 ];
