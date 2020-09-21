@@ -22,6 +22,7 @@ EVERY EXERCISE SHOULD USE DESTRUCTURING*/
     indian = 'IN';
     arctic = 'AR';
     console.log(atlantic, pacific, indian, arctic);
+    
 
 //4.  Using destructuring create a new array that maps through the items array and from each item in the loop, a string of the color and shape values should be logged. for example one loop should return 'blue circle' from the items array. This is not a function. you will just map and use the items array as the only array.
     let items = [
@@ -33,7 +34,8 @@ EVERY EXERCISE SHOULD USE DESTRUCTURING*/
     const colorInfo = items.map(({color:a, shape:b}) => {
         console.log(`${a} ${b}`)
         return `${a} ${b}`
-    })
+        
+    }).toString();
     colorInfo;
     
 
@@ -63,11 +65,47 @@ EVERY EXERCISE SHOULD USE DESTRUCTURING*/
     ],
     },
     };
+    // const {carTypes:{...cars}} = car;
+    // console.log(cars);
+    // console.log(cars.one);
+    // console.log(cars.two);
+    let {carTypes: {one: {make: makeOne, model: modelOne, year: yearOne}, two: {make: makeTwo, model: modelTwo, year: yearTwo}}
+    } = car;
+    makeTwo;
+
+    let {repairPlaces:{otherShops:[shopThree, shopFour, ...shopFive]}} = car;
+    shopFive;
+    
+
+
 /*6.  Create a class Cars that takes make, color, and year
     Instantiate 4 cars, car1,car2, car3, car4
     Using destructuring declare the make, color and year variables for each car and console.log the variables
     OR SHOULD I SAY declare the make, color and year and list a string for each showing their values.*/
-    
+    class Cars {
+        constructor(make, color, year) {
+            this.make = make;
+            this.color = color;
+            this.year = year;
+        }
+    };
+    const car1 = new Cars('Ram', 'Silver', 2016);
+    car1;
+    const car2 = new Cars('Mercedes', 'Black', 2020);
+    car2;
+    const car3 = new Cars('BMW', 'Grey', 2019);
+    car3;
+    const car4 = new Cars('Chev', 'Red', 2018);
+    car4;
+
+    const {make: a1, color: b1, year: c1} = car1;
+    console.log(`${a1} ${b1} ${c1}`);
+    const {make: a2, color: b2, year: c2 } = car2;
+    console.log(`${a2} ${b2} ${c2}`);
+    const {make: a3, color: b3, year: c3} = car3
+    console.log(`${a3} ${b3} ${c3}`);
+    const {make: a4, color: b4, year: c4} = car4;
+    console.log(`${a4} ${b4} ${c4}`);
     
  //7. Using destructuring, choose all the schools with a gpa higher than 3.5,
       //and list the chosen object ascending by major and log the average gpa,
@@ -80,3 +118,22 @@ let schoolArray = [
   { school: 'Peekskill', major: 'liberal arts', year: 'freshman', gpa: 4.0 },
   { school: 'Anopram', major: 'accounting', year: 'senior', gpa: 3.7 },
 ];
+
+const gpaArr = schoolArray.filter(({gpa: gpaScore}) => {
+    // console.log(gpaScore)
+    return gpaScore > 3.5
+    })
+    .sort((a,b) => {
+        if (a.major > b.major) {
+            return 1;
+        }
+        return -1;
+    })
+    // .forEach(({gpa: gpaScore}) => {
+    //     let sum = 0;
+    //     sum += gpaScore;
+    //     sum;
+    //     return sum; 
+    // })
+    
+gpaArr;
